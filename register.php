@@ -13,9 +13,9 @@
 				<div class="row">
 					<div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
 						<div class="card card-signup">
-							<form class="form" method="POST" action="logging.php">
+							<form class="form" method="POST" action="registering.php">
 								<div class="header header-warning text-center">
-									<h4>Se connecter</h4>
+									<h4>S'inscrire</h4>
 									<div class="social-line">
 										<a href="#pablo" class="btn btn-simple btn-just-icon">
 											<i class="fa fa-facebook-square"></i>
@@ -28,8 +28,54 @@
 										</a>
 									</div>
 								</div>
-								<a href="passwordforgot.php"><p class="text-divider">Mot de passe oublié ?</p></a>
+								<?php
+									if (isset($_POST['message']))
+									{
+										echo "<p class='text-divider'><font color='red'>".$_POST['message']."</font></p>";
+									}
+									else
+									{
+										echo "<p class='text-divider'>Inscription classique</p>";
+									}
+								?>
 								<div class="content">
+
+									<div class="input-group">
+										<span class="input-group-addon">
+											<i class="material-icons">perm_identity</i>
+										</span>
+										<input type="text" class="form-control" name="nom" placeholder="Nom..." required>
+									</div>
+
+									<div class="input-group">
+										<span class="input-group-addon">
+											<i class="material-icons">person</i>
+										</span>
+										<input type="text" class="form-control" name="prenom" placeholder="Prénom..." required>
+									</div>
+
+									<div class="input-group">
+										<span class="input-group-addon">
+											<i class="material-icons">account_circle</i>
+										</span>
+										<input type="text" class="form-control" name="pseudo" placeholder="Pseudo..." required>
+									</div>
+
+								<center>
+									<div class="radio">
+										<label>
+											<input type="radio" name="radioType" value="1" checked="true">
+											Je suis un membre
+										</label>
+									</div>
+
+									<div class="radio">
+										<label>
+											<input type="radio" name="radioType" value="2">
+											Je suis un artiste
+										</label>
+									</div>
+								</center>
 
 									<div class="input-group">
 										<span class="input-group-addon">
@@ -42,25 +88,24 @@
 										<span class="input-group-addon">
 											<i class="material-icons">lock_outline</i>
 										</span>
-										<input type="password" class="form-control" name="password" placeholder="Mot de passe..."  required/>
+										<input type="password" class="form-control" name="password" placeholder="Mot de passe..." required/>
 									</div>
 
-									<!-- If you want to add a checkbox to this form, uncomment this code
+									<div class="input-group">
+										<span class="input-group-addon">
+											<i class="material-icons">lock_outline</i>
+										</span>
+										<input type="password" class="form-control" name="passwordConfirm" placeholder="Confirmez le mot de passe..." required/>
+									</div>
 
-									<div class="checkbox">
-										<label>
-											<input type="checkbox" name="optionsCheckboxes" checked>
-											Subscribe to newsletter
-										</label>
-									</div> -->
 								</div>
 								<div class="footer text-center">
-									<input type="submit" class="btn btn-simple btn-warning btn-lg" value="Connexion">
+									<input type="submit" class="btn btn-simple btn-warning btn-lg" value="Inscription">
 								</div>
 							</form>
 
 							<div class="footer text-center">
-								<a href="register.php" class="btn btn-simple btn-warning btn-lg">Pas encore de compte ?</a>
+								<a href="login.php" class="btn btn-simple btn-warning btn-lg">Déjà un compte ?</a>
 							</div>
 						</div>
 					</div>

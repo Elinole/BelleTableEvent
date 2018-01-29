@@ -81,21 +81,21 @@
 										<span class="input-group-addon">
 											<i class="material-icons">email</i>
 										</span>
-										<input type="text" class="form-control" name="mail" placeholder="Email..." required>
+										<input type="email" class="form-control" name="mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="Veuillez entrer une adresse mail valide !" placeholder="Email..." required>
 									</div>
 
 									<div class="input-group">
 										<span class="input-group-addon">
 											<i class="material-icons">lock_outline</i>
 										</span>
-										<input type="password" class="form-control" name="password" placeholder="Mot de passe..." required/>
+										<input type="password" class="form-control" name="password" pattern=".{6,}" title="Au moins 6 caractères." placeholder="Mot de passe..." required/>
 									</div>
 
 									<div class="input-group">
 										<span class="input-group-addon">
 											<i class="material-icons">lock_outline</i>
 										</span>
-										<input type="password" class="form-control" name="passwordConfirm" placeholder="Confirmez le mot de passe..." required/>
+										<input type="password" class="form-control" name="passwordConfirm" pattern=".{6,}" title="Au moins 6 caractères" placeholder="Confirmez le mot de passe..." required/>
 									</div>
 
 								</div>

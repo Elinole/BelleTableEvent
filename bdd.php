@@ -27,4 +27,32 @@ function registering($bdd, $nom, $prenom, $mail, $pseudo, $type, $password) {
     }
 }
 
+function users($bdd) {
+    try {
+        $sql = "SELECT * FROM users;";
+//        echo $sql;
+        $sth = $bdd->prepare($sql);
+        $sth->execute();
+        $result = $sth->fetchAll(PDO::FETCH_ASSOC);
+//        var_dump($result);
+        return $result;
+    } catch (PDOException $e) {
+        die('Erreur : ' . $e->getMessage()); // NE PAS AFFICHER L ERREUR AFFICHER UNE AUTRE ERREUR
+    }
+}
+
+function logging($bdd, $pseudo, $password) {
+    try {
+        $sql = "SELECT * FROM users WHERE Pseudo = '$pseudo' AND Password = '$password' OR Mail = '$pseudo' AND Password = '$password';";
+//        echo $sql;
+        $sth = $bdd->prepare($sql);
+        $sth->execute();
+        $result = $sth->fetchAll(PDO::FETCH_ASSOC);
+//        var_dump($result);
+        return $result;
+    } catch (PDOException $e) {
+        die('Erreur : ' . $e->getMessage()); // NE PAS AFFICHER L ERREUR AFFICHER UNE AUTRE ERREUR
+    }
+}
+
 ?>

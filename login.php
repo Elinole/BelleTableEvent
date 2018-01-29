@@ -17,25 +17,39 @@
 								<div class="header header-warning text-center">
 									<h4>Se connecter</h4>
 									<div class="social-line">
-										<a href="#pablo" class="btn btn-simple btn-just-icon">
+										<a href="#pabloescobar" class="btn btn-simple btn-just-icon">
 											<i class="fa fa-facebook-square"></i>
 										</a>
-										<a href="#pablo" class="btn btn-simple btn-just-icon">
+										<a href="#pabloescobar" class="btn btn-simple btn-just-icon">
 											<i class="fa fa-twitter"></i>
 										</a>
-										<a href="#pablo" class="btn btn-simple btn-just-icon">
+										<a href="#pabloescobar" class="btn btn-simple btn-just-icon">
 											<i class="fa fa-google-plus"></i>
 										</a>
 									</div>
 								</div>
-								<a href="passwordforgot.php"><p class="text-divider">Mot de passe oublié ?</p></a>
+								<?php
+									if (isset($_POST['message']))
+									{
+										echo '<p class="text-divider"><font color="green">'.$_POST['message'].'</font></p>';
+									}
+									else
+									{
+										echo '<a href="passwordforgot.php"><p class="text-divider">Mot de passe oublié ?</p></a>';
+									}
+									if (isset($_POST['message2']))
+									{
+										echo '<p class="text-divider"><font color="red">'.$_POST['message2'].'</font></p>';
+									}
+								?>
+
 								<div class="content">
 
 									<div class="input-group">
 										<span class="input-group-addon">
 											<i class="material-icons">email</i>
 										</span>
-										<input type="text" class="form-control" name="mail" placeholder="Email..." required>
+										<input type="text" class="form-control" name="pseudo" placeholder="Email ou pseudo..." required>
 									</div>
 
 									<div class="input-group">
@@ -45,14 +59,6 @@
 										<input type="password" class="form-control" name="password" placeholder="Mot de passe..."  required/>
 									</div>
 
-									<!-- If you want to add a checkbox to this form, uncomment this code
-
-									<div class="checkbox">
-										<label>
-											<input type="checkbox" name="optionsCheckboxes" checked>
-											Subscribe to newsletter
-										</label>
-									</div> -->
 								</div>
 								<div class="footer text-center">
 									<input type="submit" class="btn btn-simple btn-warning btn-lg" value="Connexion">

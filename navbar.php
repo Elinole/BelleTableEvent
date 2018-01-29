@@ -11,7 +11,7 @@
 	    	<a href="index.php">
 	        	<div class="logo-container">
 	                <div class="logo">
-	                    <img src="assets/img/logo.png" alt="Creative Tim Logo" rel="tooltip" title="<b>Belle Table Concours</b> | Revenir à l'accueil" data-placement="bottom" data-html="true">
+	                    <img src="assets/img/logo.png" alt="Belle Table" rel="tooltip" title="<b>Belle Table Concours</b> | Revenir à l'accueil" data-placement="bottom" data-html="true">
 	                </div>
 	                <div class="brand">
 	                    BELLE TABLE
